@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'drawer.dart';
 
 class Pantalla02 extends StatefulWidget {
   final String cedula;
@@ -30,10 +31,17 @@ class _Pantalla02State extends State<Pantalla02> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MenuLateral(),
       appBar: AppBar(
         title: const Text('Segunda Pantalla'),
       ),
-      body: Center(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/fondo.PNG"),
+            fit: BoxFit.fill,
+          ),
+        ),
         child: ListView(
           padding: const EdgeInsets.all(10),
           //mainAxisAlignment: MainAxisAlignment.center,

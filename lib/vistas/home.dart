@@ -1,40 +1,39 @@
 // usar < flutter pub get > para cargar los paquetes
 import 'package:flutter/material.dart';
 import './pantalla01.dart';
+import 'drawer.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
   @override
-    Widget build(BuildContext context) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: true,
-        title: 'Electiva I',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-              // ignore: prefer_const_constructors
-              seedColor: Color.fromARGB(255, 40, 241, 0)),
-          useMaterial3: true,
-        ),
-        home: const MyHomePage(title: 'Formulario de Captura de datos'),
-      );
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: true,
+      title: 'Electiva I',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+            // ignore: prefer_const_constructors
+            seedColor: Color.fromARGB(255, 40, 241, 0)),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Formulario de Captura de datos'),
+    );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
-
   @override
   State<MyHomePage> createState() => _HomeState();
 }
 
 class _HomeState extends State<MyHomePage> {
   //variables
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MenuLateral(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColorLight,
         title: const Text('Navegacion entre Pantallas'),
@@ -69,7 +68,6 @@ class _HomeState extends State<MyHomePage> {
                       color: Color.fromARGB(255, 0, 0, 0),
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      
                     ),
                   ),
                   const SizedBox(

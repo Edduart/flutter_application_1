@@ -6,6 +6,15 @@ void main() {
   runApp(const MyApp());
 }
 
+
+class MenuLateral extends StatelessWidget {
+  const MenuLateral({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const Drawer();
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

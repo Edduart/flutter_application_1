@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './pantalla02.dart';
+import 'drawer.dart';
 
 const List<String> list = <String>['Masculino', 'Femenino', 'Otro'];
 
@@ -7,7 +8,6 @@ class Pantalla01 extends StatefulWidget {
   const Pantalla01({super.key});
   @override
   State<Pantalla01> createState() => _Pantalla01State();
-  
 }
 
 class _Pantalla01State extends State<Pantalla01> {
@@ -20,14 +20,20 @@ class _Pantalla01State extends State<Pantalla01> {
   final TextEditingController controllerComision = TextEditingController();
   final TextEditingController controllerDeuda = TextEditingController();
   final TextEditingController controllerSueldoNeto = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MenuLateral(),
       appBar: AppBar(
         title: const Text('Primera Pantalla'),
       ),
-      body: Center(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/fondo.PNG"),
+            fit: BoxFit.fill,
+          ),
+        ),
         child: ListView(
           //mainAxisAlignment: MainAxisAlignment.center,
           padding: const EdgeInsets.all(10),
